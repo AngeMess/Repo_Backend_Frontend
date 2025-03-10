@@ -6,13 +6,16 @@
  */
 
 import express from "express";
+import productsController from "../controllers/productsController.js";
 
 const router = express.Router();
 
 router.route("/")
-    .get()
-    .post()
-    .put()
-    .delete();
+    .get(productsController.getProducts)
+    .post(productsController.insertProducts);
+
+router.route("/:id")
+    .put(productsController.updateProduct)
+    .delete(productsController.deleteProduct);
 
 export default router;

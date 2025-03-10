@@ -1,4 +1,4 @@
-import mongoose from "mongoose"
+import mongoose from "mongoose";
 
 // Guardo en una cosntante la dirección de mi base de datos
 const URI = "mongodb://localhost:27017/cocacolaDB"

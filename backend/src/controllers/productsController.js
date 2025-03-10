@@ -11,7 +11,7 @@ productsController.getProducts = async (req, res) => {
 
 // INSERT
 productsController.insertProducts = async (req, res) => {
-    const { name, description, price, stock } = req.body;
+    const {name, description, price, stock} = req.body;
     const newProduct = new productsModel({name, description, price, stock});
     await newProduct.save()
     res.json({message: "product saved"});
@@ -25,7 +25,7 @@ productsController.deleteProduct = async (req, res) => {
 
 // UPDATE
 productsController.updateProduct = async (req, res) => {
-    const { name, description, price, stock } = req.body;
+    const {name, description, price, stock} = req.body;
     const updateProduct = await productsModel.findByIdAndUpdate(
         req.params.id, {name, description, price, stock}, {new: true}
     )
